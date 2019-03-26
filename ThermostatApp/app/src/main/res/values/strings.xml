@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Thermostat</string>
+    <!-- Strings related to login -->
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password </string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="wrong_creds">This should not be an email. Don\'t use your H1 creds!</string>
+    <string name="dummy_temp">73°</string>
+    <string name="temperature">TEMPERATURE</string>
+    <string name="current">CURRENT</string>
+    <string name="set_to">SET TO</string>
+    <string name="cooling_off">Cooling Off</string>
+    <string name="cooling_on">Cooling On</string>
+    <string name="degree">°</string>
+    <string name="cooling_to">COOLING TO</string>
+</resources>

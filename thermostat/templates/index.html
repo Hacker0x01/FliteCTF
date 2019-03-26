@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+	<head>
+		<title>FliteThermostat - Log In</title>
+	</head>
+	<body>
+		{% if error %}
+		<p style="color: red;">{{ error }}</p>
+		{% endif %}
+		<h1>FliteThermostat Login</h1>
+		Username: <input type="text" id="username" name="username"><br>
+		Password: <input type="password" id="password" name="password"><br>
+		<button id="login" onClick="login()">Log In</button>
+		<form id="form" method="POST"><input type="hidden" id="hash" name="hash"></form>
+		<script src="login.js"></script>
+	</body>
+</html>

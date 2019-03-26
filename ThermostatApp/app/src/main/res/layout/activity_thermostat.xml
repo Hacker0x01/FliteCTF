@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".ThermostatActivity">
+
+    <LinearLayout
+        android:id="@+id/thermostat_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/curr_temp_layout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textSize="16sp"
+                android:fontFamily="@font/dalton_maag_effra_medium"
+                android:text="@string/current" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textSize="16sp"
+                android:fontFamily="@font/dalton_maag_effra_medium"
+                android:text="@string/temperature" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textSize="32sp"
+                android:fontFamily="@font/dalton_maag_effra_medium"
+                android:text="@string/dummy_temp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/thermostat_container"
+            android:layout_width="325dp"
+            android:layout_height="325dp"
+            android:background="@drawable/cooling_circle"
+            android:layout_gravity="center"
+            android:layout_marginBottom="28dp"
+            android:gravity="center">
+
+
+            <com.hackerone.thermostat.Vendor.ColorArcProgressBar
+                android:id="@+id/thermostat_cooling"
+                android:layout_width="275dp"
+                android:layout_height="275dp"
+                android:layout_gravity="center"
+                app:back_width="2dp"
+                app:front_color1="@color/gradient_start"
+                app:front_color2="@color/gradient_middle"
+                app:front_color3="@color/gradient_end"
+                app:font="@font/dalton_maag_effra_light"
+                app:arc_color="#606F81"
+                app:degree_color="#606F81"
+                app:front_width="12dp"
+                app:is_need_content="true"
+                app:is_need_dial="true"
+                app:is_need_title="true"
+                app:max_value="100"
+                app:string_title="@string/cooling_to"
+                app:total_engle="270" />
+
+            <com.hackerone.thermostat.Vendor.ColorArcProgressBar
+                android:id="@+id/thermostat_cooling_off"
+                android:layout_width="275dp"
+                android:layout_height="275dp"
+                android:layout_gravity="center"
+                app:back_width="2dp"
+                app:front_color1="@color/gradient_start"
+                app:front_color2="@color/gradient_middle"
+                app:front_color3="@color/gradient_end"
+                app:font="@font/dalton_maag_effra_light"
+                app:arc_color="#606F81"
+                app:degree_color="#606F81"
+                app:front_width="12dp"
+                app:is_need_content="true"
+                app:is_need_dial="true"
+                app:is_need_title="true"
+                app:max_value="100"
+                app:string_title="@string/set_to"
+                app:total_engle="270" />
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/button_minus"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/ic_minus_icon"
+                />
+
+            <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                android:id="@+id/temp_slider"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                app:dsb_progressColor="@color/radial_line"
+                app:dsb_indicatorColor="@color/radial_line"
+                app:dsb_indicatorTextAppearance="@style/CustomFloaterTextAppearance"
+                app:dsb_max="100"
+                app:dsb_min="50" />
+
+            <ImageButton
+                android:id="@+id/button_plus"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/ic_add_icon"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:alpha=".5"
+            android:src="@drawable/ic_horiz_white" />
+
+
+    </LinearLayout>
+</LinearLayout>

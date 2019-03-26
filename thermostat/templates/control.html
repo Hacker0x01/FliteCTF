@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<title>FliteThermostat - Temperature Control</title>
+	</head>
+	<body>
+		<h1>FliteThermostat Temperature Control</h1>
+		<p>Target temperature {{ temp }}</p>
+		<p>Current temperature 73</p>
+		{% if cooling %}
+		<p style="color: blue">Cooling</p>
+		{% else %}
+		<p>Not cooling</p>
+		{% endif %}
+		<form action="/setTemp" method="POST">
+			Set temperature: <select name="temp">
+				<option>60</option>
+				<option>61</option>
+				<option>62</option>
+				<option>63</option>
+				<option>64</option>
+				<option>65</option>
+				<option>66</option>
+				<option>67</option>
+				<option>68</option>
+				<option>69</option>
+				<option>70</option>
+				<option>71</option>
+				<option>72</option>
+				<option>73</option>
+				<option>74</option>
+				<option>75</option>
+				<option>76</option>
+				<option>77</option>
+				<option>78</option>
+				<option>79</option>
+			</select>
+			<input type="submit" value="Set">
+		</form>
+	</body>
+</html>

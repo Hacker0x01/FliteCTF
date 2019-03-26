@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#152940</color>
+    <color name="colorPrimaryDark">#16191C</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="white">#FFFF</color>
+    <color name="gradient_start">#112133</color>
+    <color name="gradient_middle">#6BBD45</color>
+    <color name="gradient_end">#EC1075</color>
+    <color name="radial_line">#606F81</color>
+    <color name="dark_gray_circle">#101214</color>
+    <color name="dark_blue_circle">#112133</color>
+    <color name="black">#33000000</color>
+</resources>

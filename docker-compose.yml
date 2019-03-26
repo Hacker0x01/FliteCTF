@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+  accounting:
+    image: accounting
+    restart: always
+  thermostat:
+    image: thermostat
+    restart: always
+    ports:
+      - 80:80

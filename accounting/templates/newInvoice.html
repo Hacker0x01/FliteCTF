@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+	<table>
+		<tr>
+			<td style="padding-right: 10px">Recipient Company Name</td>
+			<td style="padding-right: 20px"><input type="text" id="recipient-company-name" value="Acme Tools"></td>
+
+			<td style="padding-right: 10px">Invoice Number</td>
+			<td><input type="text" id="invoice-number" value="0001"></td>
+		</tr>
+		<tr>
+			<td>Recipient Email</td>
+			<td><input type="email" id="recipient-email" value="accounting@acme.com"></td>
+
+			<td>Invoice Date</td>
+			<td><input type="date" id="invoice-date" value="2019-04-01"></td>
+		</tr>
+	</table>
+	<br>
+	<table id="item-table" class="table">
+		<thead>
+			<tr>
+				<th>Quantity</th>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Unit Price</th>
+				<th>Total</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	<br>
+	<a id="add-item" href="#">Add Item</a> | <a id="preview" href="#">Preview</a> | <a id="save-pdf" href="#">Save PDF</a><br>
+	<br>
+	<div id="iframe-box"></div>
+	<script src="newInvoice.js"></script>
+{% endblock %}

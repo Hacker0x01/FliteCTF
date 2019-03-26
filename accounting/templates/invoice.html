@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block body %}
+	<style>
+		.invoice-title h2, .invoice-title h3 {
+			display: inline-block;
+		}
+		.table > tbody > tr > .no-line {
+			border-top: none;
+		}
+		.table > thead > tr > .no-line {
+			border-bottom: none;
+		}
+		.table > tbody > tr > .thick-line {
+			border-top: 2px solid;
+		}
+{{ style | safe }}
+	</style>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="invoice-title">
+				<h2>Invoice</h2><h3 class="pull-right"># {{ invoiceNumber }}</h3>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-xs-6">
+					<address>
+						<strong>Billed To:</strong><br>
+						{{ companyName }}<br>
+						{{ email }}
+					</address>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 text-right">
+					<strong>Invoice Date:</strong><br>
+					{{ date }}
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><strong>Breakdown</strong></h3>
+				</div>
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="table table-condensed">
+							<thead>
+								<tr>
+									<td class="text-center"><strong>Quantity</strong></td>
+									<td class="text-center"><strong>Name</strong></td>
+									<td class="text-center"><strong>Description</strong></td>
+									<td class="text-center"><strong>Unit Price</strong></td>
+									<td class="text-right"><strong>Total</strong></td>
+								</tr>
+							</thead>
+							<tbody>
+								{% for item in items %}
+								<tr>
+									<td class="text-center">{{ item['quantity'] }}</td>
+									<td class="text-center">{{ item['name'] }}</td>
+									<td class="text-center">{{ item['desc'] }}</td>
+									<td class="text-center">${{ item['price'] }}</td>
+									<td class="text-right">${{ item['total'] }}</td>
+								</tr>
+								{% endfor %}
+								<tr>
+									<td class="no-line"></td>
+									<td class="no-line"></td>
+									<td class="no-line"></td>
+									<td class="no-line text-center"><strong>Total</strong></td>
+									<td class="no-line text-right">${{ total }}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+			<meta charset="utf-8">
+			<title>Accounting</title>
+			<meta name="viewport" content="width=device-width">
+			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+			<script src="//code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+			<style>.navbar-fixed-top { position: absolute!important; }</style>
+			{% block scripts %}
+			{% endblock %}
+	</head>
+	<body>
+		{% if page != 'preview_invoice' and page != 'pdfize_invoice' %}
+		<header>
+			<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #3A3F44">
+				<ul class="navbar-nav mr-auto">
+					<li {% if page=='home' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+						<a class="nav-link" href="/">Home</a>
+					</li>
+					<li {% if page=='reports' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+						<a class="nav-link" href="/reports">Reports</a>
+					</li>
+					<li {% if page=='invoices' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+						<a class="nav-link" href="/invoices">Invoices</a>
+					</li>
+					{% if page == 'invoices' or page == 'new_invoice' %}
+					<!--<li {% if page=='new_invoice' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+						<a class="nav-link" href="/invoices/new">New Invoice</a>
+					</li>-->
+					{% endif %}
+				</ul>
+			</nav>
+		</header>
+		{% endif %}
+
+		<div class="container" style="padding-top: 10px">
+			{% block body %}
+			{% endblock %}
+		</div>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	</body>
+</html>
